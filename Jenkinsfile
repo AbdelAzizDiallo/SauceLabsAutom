@@ -2,11 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('importResults') {
-            steps {
-                bat 'curl -H "Content-Type: application/json" -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJiNmNhZGQwNS1lMzQxLTNmMTctYjU1Zi00OTM0MTI4MWQ4MmEiLCJhY2NvdW50SWQiOiI3MTIwMjA6ZjY5MGZhNzItZDEwZi00ZDA3LWI1MzUtZjZmMTEyNWFjMmIxIiwiaXNYZWEiOmZhbHNlLCJpYXQiOjE3NzA2MzU2OTMsImV4cCI6MTc3MDcyMjA5MywiYXVkIjoiQjBGM0UyQ0RFQzkwNDc3NTlDRkI5RTdFRTQ1QkZGMzgiLCJpc3MiOiJjb20ueHBhbmRpdC5wbHVnaW5zLnhyYXkiLCJzdWIiOiJCMEYzRTJDREVDOTA0Nzc1OUNGQjlFN0VFNDVCRkYzOCJ9.HNIIv68ZQUyT58ytuHTeYSfloS6rBn8Qe05avXuZcp0" --data @"target/cucumber.json" https://xray.cloud.getxray.app/api/v1/import/execution/cucumber'
-            }
-        }
+
         stage('Checkout') {
             steps {
                 // Si ton projet n'est PAS sur Git, on saute cette étape
@@ -20,6 +16,11 @@ pipeline {
                     bat 'mvn clean test'
             }
         }
+        stage('importResults') {
+                    steps {
+                        bat 'curl -H "Content-Type: application/json" -X POST -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJiNmNhZGQwNS1lMzQxLTNmMTctYjU1Zi00OTM0MTI4MWQ4MmEiLCJhY2NvdW50SWQiOiI3MTIwMjA6ZjY5MGZhNzItZDEwZi00ZDA3LWI1MzUtZjZmMTEyNWFjMmIxIiwiaXNYZWEiOmZhbHNlLCJpYXQiOjE3NzA2MzU2OTMsImV4cCI6MTc3MDcyMjA5MywiYXVkIjoiQjBGM0UyQ0RFQzkwNDc3NTlDRkI5RTdFRTQ1QkZGMzgiLCJpc3MiOiJjb20ueHBhbmRpdC5wbHVnaW5zLnhyYXkiLCJzdWIiOiJCMEYzRTJDREVDOTA0Nzc1OUNGQjlFN0VFNDVCRkYzOCJ9.HNIIv68ZQUyT58ytuHTeYSfloS6rBn8Qe05avXuZcp0" --data @"target/cucumber.json" https://xray.cloud.getxray.app/api/v1/import/execution/cucumber'
+                    }
+                }
     }
 
     post {
