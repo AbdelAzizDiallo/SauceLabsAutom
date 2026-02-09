@@ -4,6 +4,7 @@ pipeline {
     parameters {
     string(name: 'SELENIUM_BROWSER', defaultValue:'EDGE')
     }
+
     stages {
 
         stage('Checkout') {

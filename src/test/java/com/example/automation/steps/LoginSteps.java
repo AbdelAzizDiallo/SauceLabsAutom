@@ -35,6 +35,7 @@ public class LoginSteps {
 
     @Then("le message d'erreur s'affiche")
     public void checkErrorMessage() {
+
         assertFalse("Le message d'erreur devrait être affiché", loginPage.isErrorMessageDisplayed());
     }
 }
