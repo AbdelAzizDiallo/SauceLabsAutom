@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     parameters {
-    string(name: 'SELENIUM_BROWSER', defaultValue:'EDGE')
+    string(name: 'SELENIUM_BROWSER', defaultValue:'CHROME')
+    string(plan de test : '');
     }
 
     stages {
