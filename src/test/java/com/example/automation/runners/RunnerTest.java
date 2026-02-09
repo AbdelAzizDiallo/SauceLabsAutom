@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "com.example.automation.configuration"
         },
 
-        tags = "@successfulLogin",
+        tags = "@POEI2-702",
         plugin = { "pretty", "html:target/cucumber-reports.html","json:target/cucumber.json" },
         monochrome = true
 )

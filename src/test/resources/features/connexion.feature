@@ -1,7 +1,8 @@
 
 Feature: Connexion utilisateur
 
-  @successfulLogin
+  @POEI2-702
+
   Scenario Outline: Connexion avec identifiants valides
     Given l'utilisateur est sur la page de connexion
     When il saisit le login "<username>" et le mot de passe "<password>"
@@ -14,7 +15,7 @@ Feature: Connexion utilisateur
       | visual_user   | secret_sauce |
 
 
-  @failedLogin
+
   Scenario: Tentative de connexion avec identifiants invalides
     Given l'utilisateur est sur la page de connexion
     When il saisit le login "standard_user" et le mot de passe "invalid_password"

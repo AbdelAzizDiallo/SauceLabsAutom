@@ -12,7 +12,11 @@ public class DriverFactory {
 
     private static WebDriver driver;
 
+
+
+
     public static WebDriver getDriver() {
+        System.getProperty("SELENIUM_BROWSER");
         if (driver == null) {
             // Ensuite, passe ces options à ton WebDriver
             ChromeOptions options = new ChromeOptions();

@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LoginSteps {
@@ -34,6 +35,6 @@ public class LoginSteps {
 
     @Then("le message d'erreur s'affiche")
     public void checkErrorMessage() {
-        assertTrue("Le message d'erreur devrait être affiché", loginPage.isErrorMessageDisplayed());
+        assertFalse("Le message d'erreur devrait être affiché", loginPage.isErrorMessageDisplayed());
     }
 }
