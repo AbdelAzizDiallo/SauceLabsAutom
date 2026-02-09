@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
     string(name: 'SELENIUM_BROWSER', defaultValue:'CHROME')
-    string(plan de test : 'Plan de test');
+    string(name: 'PLAN_DE_TEST');
     }
 
     stages {
