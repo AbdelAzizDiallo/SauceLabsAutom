@@ -1,7 +1,7 @@
 
 Feature: Connexion utilisateur
 
-  @POEI2-702
+
 
   Scenario Outline: Connexion avec identifiants valides
     Given l'utilisateur est sur la page de connexion
